@@ -1,0 +1,161 @@
+:root {
+    --bg: #fff0f8;              /* Pinky super soft tapi terang */
+    --text: #2c1a13;            /* Coklat tua banget, hampir hitam */
+    --navbar: #ffc1d9;          /* Pink pastel terang */
+    --link-hover: #d81b60;      /* Pink fuchsia tegas */
+    --shadow: rgba(216, 27, 96, 0.3); /* Shadow deep pink */
+    --font-poppins: 'Poppins', sans-serif;
+    --font-comic: 'Comic Neue', cursive;
+  }
+  
+  [data-theme='dark'] {
+    --bg: #1f1a17;               /* Espresso */
+    --text: #ffe7ec;             /* Blush pink */
+    --navbar: #2d2420;           /* Medium coffee */
+    --link-hover: #fcb7c2;       /* Blush rose */
+    --shadow: rgba(252, 183, 194, 0.25); /* Lembut dan dreamy */
+  }
+  
+  body {
+    font-family: var(--font-poppins);
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;  
+  }
+  
+  .navbar {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar);
+    color: var(--text);
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 6px var(--shadow);
+    border-bottom: 2px dashed var(--link-hover);
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .navbar-title {
+    font-family: var(--font-comic);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .navbar-menu {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  .navbar-link:hover {
+    color: var(--link-hover);
+    transform: scale(1.05);
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+  .theme-toggle:hover {
+    transform: rotate(20deg);
+    color: var(--link-hover);
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+  @media (min-width: 768px) {
+    .mobile-menu-button {
+      display: none;
+    }
+  }
+  
+  .mobile-dropdown {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px var(--shadow);
+    z-index: 40;
+    animation: fadeIn 0.3s ease-in-out;
+    border-top: 2px dotted var(--link-hover);
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .footer {
+    background-color: var(--navbar);
+    color: var(--text);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 -2px 6px var(--shadow);
+    border-top: 2px dashed var(--link-hover);
+    border-radius: 1rem 1rem 0 0;
+    margin-top: 3rem;
+    font-family: var(--font-comic);
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* jarak antar ikon */
+    margin-top: 0.5rem;
+  }
+  
+  .footer-icon {
+    color: var(--text);
+    transition: all 0.3s ease;
+  }
+  
+  .footer-icon:hover {
+    color: var(--link-hover);
+    transform: scale(1.2);
+  }
+  
+  /* DEKORASI */
+  
